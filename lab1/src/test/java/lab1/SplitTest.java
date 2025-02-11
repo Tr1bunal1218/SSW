@@ -16,7 +16,6 @@ public class SplitTest {
 
     @BeforeEach
     public void setUp() {
-        // Очистка файлов перед каждым тестом
         clearFile(INT_FILE);
         clearFile(DOUBLE_FILE);
         clearFile(STRING_FILE);
@@ -27,7 +26,6 @@ public class SplitTest {
         Split<Integer> split = new Split<>(Integer.class);
         split.makeSplit(123);
 
-        // Проверяем, что файл не пуст
         assertTrue(isFileNotEmpty(INT_FILE));
     }
 
@@ -49,19 +47,12 @@ public class SplitTest {
 
     @Test
     public void testFileClearingBeforeWriting() {
-        // Создаем экземпляр класса Distribution и сбрасываем флаг очистки перед каждым использованием
         Split<Integer> split = new Split<>(Integer.class, true);
 
-        // Очистка файла перед первой записью
-
-
-        // Запишем что-то в файл
         split.makeSplit(123);
         split.resetWriteFlag();
-        // Запишем что-то новое, файл должен быть очищен перед этим
         split.makeSplit(456);
 
-        // Проверим, что файл содержит только одно значение
         try {
             String content = new String(Files.readAllBytes(Paths.get(INT_FILE)));
             assertEquals("456\n", content);

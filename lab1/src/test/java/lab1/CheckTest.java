@@ -13,10 +13,8 @@ public class CheckTest {
 
     @Test
     public void testCheckTypesFromFileInteger() {
-        // Создаем тестовый файл с целыми числами
         String filename = "src/files/test_integers.txt";
 
-        // Записываем данные в файл
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write("123\n");
             writer.write("-456\n");
@@ -27,7 +25,6 @@ public class CheckTest {
         Check check = new Check();
         List<Object> dataList = check.checkTypes(filename);
 
-        // Проверяем, что список содержит два целых числа
         assertEquals(2, dataList.size());
         assertTrue(dataList.get(0) instanceof Integer);
         assertTrue(dataList.get(1) instanceof Integer);
@@ -37,10 +34,8 @@ public class CheckTest {
 
     @Test
     public void testCheckTypesFromFileDouble() {
-        // Создаем тестовый файл с вещественными числами
-        String filename = "src/files/test_floats.txt";
+        String filename = "src/files/test_doubles.txt";
 
-        // Записываем данные в файл
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write("123.45\n");
             writer.write("-678.90\n");
@@ -51,7 +46,6 @@ public class CheckTest {
         Check check = new Check();
         List<Object> dataList = check.checkTypes(filename);
 
-        // Проверяем, что список содержит два вещественных числа
         assertEquals(2, dataList.size());
         assertTrue(dataList.get(0) instanceof Double);
         assertTrue(dataList.get(1) instanceof Double);
@@ -61,10 +55,8 @@ public class CheckTest {
 
     @Test
     public void testCheckTypesFromFileString() {
-        // Создаем тестовый файл со строками
         String filename = "src/files/test_strings.txt";
 
-        // Записываем данные в файл
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write("Hello\n");
             writer.write("World\n");
@@ -75,7 +67,6 @@ public class CheckTest {
         Check check = new Check();
         List<Object> dataList = check.checkTypes(filename);
 
-        // Проверяем, что список содержит две строки
         assertEquals(2, dataList.size());
         assertTrue(dataList.get(0) instanceof String);
         assertTrue(dataList.get(1) instanceof String);
