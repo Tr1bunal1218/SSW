@@ -23,7 +23,7 @@ public class Split<Type> {
         if (dataType == Integer.class) {
             outputFile = "src/files/integers.txt";
         } else if (dataType == Double.class) {
-            outputFile = "src/files/floats.txt";
+            outputFile = "src/files/doubles.txt";
         } else if (dataType == String.class) {
             outputFile = "src/files/strings.txt";
         }
@@ -36,7 +36,7 @@ public class Split<Type> {
         try (FileWriter fileWriter = new FileWriter(outputFile, true)) {
             fileWriter.write(value.toString() + "\n");
         } catch (IOException error) {
-            System.out.println("Ошибка записи в файл: " + error.getMessage());
+            System.out.println("Error writing to a file: " + error.getMessage());
         }
     }
 
@@ -44,7 +44,7 @@ public class Split<Type> {
         try (FileWriter fileWriter = new FileWriter(filePath, false)) {
             fileWriter.write("");
         } catch (IOException error) {
-            System.out.println("Ошибка очистки файла: " + filePath);
+            System.out.println("File cleanup error: " + filePath);
         }
     }
 

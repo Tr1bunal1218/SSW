@@ -9,12 +9,10 @@ public class Main {
             Check verifier = new Check();
             List<Object> collectedData = verifier.checkTypes(filePath);  // Получаем все данные
 
-            // Создаем объекты Distribute для каждого типа данных
             Split<Integer> integerDistributor = new Split<>(Integer.class, true);  // Очистка файла перед записью
-            Split<Double> doubleDistributor = new Split<>(Double.class, true);  // Очистка файла перед записью
+            Split<Double> doubleDistributor = new Split<>(Double.class, true); // Очистка файла перед записью
             Split<String> stringDistributor = new Split<>(String.class, true);  // Очистка файла перед записью
 
-            // Обрабатываем все данные и передаем их в соответствующий Distribute
             for (Object item : collectedData) {
                 if (item instanceof Integer) {
                     integerDistributor.makeSplit((Integer) item);
@@ -24,9 +22,10 @@ public class Main {
                     stringDistributor.makeSplit((String) item);
                 }
             }
+            System.out.println("The data has been successfully splited into files!");
 
         } catch (Exception error) {
-            error.printStackTrace();  // Печать стека ошибок
+            error.printStackTrace();
         }
     }
 }
