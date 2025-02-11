@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SplitTest {
 
-    private static final String INT_FILE = "src/files/integer.txt";
-    private static final String DOUBLE_FILE = "src/files/float.txt";
-    private static final String STRING_FILE = "src/files/string.txt";
+    private static final String INT_FILE = "src/files/integers.txt";
+    private static final String DOUBLE_FILE = "src/files/doubles.txt";
+    private static final String STRING_FILE = "src/files/strings.txt";
 
     @BeforeEach
     public void setUp() {
