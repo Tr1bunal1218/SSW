@@ -7,11 +7,11 @@ public class Main {
         try {
             String filePath = "src/files/input.txt";
             Check verifier = new Check();
-            List<Object> collectedData = verifier.checkTypes(filePath);  // Получаем все данные
+            List<Object> collectedData = verifier.checkTypes(filePath);
 
-            Split<Integer> integerDistributor = new Split<>(Integer.class, true);  // Очистка файла перед записью
-            Split<Double> doubleDistributor = new Split<>(Double.class, true); // Очистка файла перед записью
-            Split<String> stringDistributor = new Split<>(String.class, true);  // Очистка файла перед записью
+            Split<Integer> integerDistributor = new Split<>(Integer.class, true);
+            Split<Double> doubleDistributor = new Split<>(Double.class, true);
+            Split<String> stringDistributor = new Split<>(String.class, true);
 
             for (Object item : collectedData) {
                 if (item instanceof Integer) {
