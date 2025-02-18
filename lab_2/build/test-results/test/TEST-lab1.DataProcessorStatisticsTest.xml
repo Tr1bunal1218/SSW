@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lab1.DataProcessorStatisticsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-02-18T09:43:15" hostname="DESKTOP-I67LT0G" time="0.011">
+  <properties/>
+  <testcase name="testShortStatistics()" classname="lab1.DataProcessorStatisticsTest" time="0.006"/>
+  <testcase name="testFullStatistics()" classname="lab1.DataProcessorStatisticsTest" time="0.004"/>
+  <system-out><![CDATA[short stat:
+int: 2
+double: 1
+string: 3
+long: 4
+short stat:
+int: 2
+double: 1
+string: 3
+long: 4
+full stat:
+int: 2
+double: 1
+string: 3
+long: 4
+sum: 100
+max: 1000
+min: 1
+avg: 14.28571
+min string: 5.0
+max string: 20.0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

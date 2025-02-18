@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lab1.DataProcessorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-02-18T09:43:15" hostname="DESKTOP-I67LT0G" time="0.014">
+  <properties/>
+  <testcase name="testProcessData()" classname="lab1.DataProcessorTest" time="0.004"/>
+  <testcase name="testProcessFile()" classname="lab1.DataProcessorTest" time="0.002"/>
+  <testcase name="testWriteResults()" classname="lab1.DataProcessorTest" time="0.006"/>
+  <system-out><![CDATA[processFile started
+processFile started
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

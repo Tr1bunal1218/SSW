@@ -1,0 +1,24 @@
+short stat:
+int: 2
+double: 1
+string: 3
+	long: 4
+short stat:
+int: 2
+double: 1
+string: 3
+	long: 4
+full stat:
+int: 2
+double: 1
+string: 3
+	long: 4
+
+sum: 100
+max: 1000
+min: 1
+avg: 14.28571
+min string: 5.0
+max string: 20.0
+processFile started
+processFile started
