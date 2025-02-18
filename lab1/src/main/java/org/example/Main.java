@@ -80,8 +80,8 @@ public class Main {
                 processFile(inputFile, intWriter, floatWriter, stringWriter, hasData,
                         intStats, floatStats, stringStats);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException exit) {
+            exit.printStackTrace();
         }
 
         removeEmptyFile(intFile, hasData[0]);
@@ -130,9 +130,9 @@ public class Main {
                     stringStats.maxLength = Math.max(stringStats.maxLength, length);
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException exit) {
             System.err.println("Error processing file: " + inputFile);
-            e.printStackTrace();
+            exit.printStackTrace();
         }
     }
 
@@ -143,39 +143,38 @@ public class Main {
         if (hasData[0]) {
             System.out.println("Integers: " + intStats.count);
             if (fullStats) {
-                System.out.println("Min value: " + (intStats.count > 0 ? intStats.min : "N/A"));
-                System.out.println("Max value: " + (intStats.count > 0 ? intStats.max : "N/A"));
+                System.out.println("Min value: " + (intStats.min));
+                System.out.println("Max value: " + (intStats.max));
                 System.out.println("Sum: " + intStats.sum);
-                System.out.println("Average: " + (intStats.count > 0 ? (double) intStats.sum / intStats.count : "N/A"));
+                System.out.println("Average: " + ((double) intStats.sum / intStats.count));
             }
         }
 
         if (hasData[1]) {
             System.out.println("Floating point numbers: " + floatStats.count);
             if (fullStats) {
-                System.out.println("Min value: " + (floatStats.count > 0 ? floatStats.min : "N/A"));
-                System.out.println("Max value: " + (floatStats.count > 0 ? floatStats.max : "N/A"));
+                System.out.println("Min value: " + (floatStats.min));
+                System.out.println("Max value: " + (floatStats.max));
                 System.out.println("Sum: " + floatStats.sum);
-                System.out.println("Average: " + (floatStats.count > 0 ? floatStats.sum / floatStats.count : "N/A"));
+                System.out.println("Average: " + (floatStats.sum / floatStats.count));
             }
         }
 
         if (hasData[2]) {
             System.out.println("Strings: " + stringStats.count);
             if (fullStats) {
-                System.out.println("Min string length: " + (stringStats.count > 0 ? stringStats.minLength : "N/A"));
-                System.out.println("Max string length: " + (stringStats.count > 0 ? stringStats.maxLength : "N/A"));
+                System.out.println("Min string length: " + (stringStats.minLength));
+                System.out.println("Max string length: " + (stringStats.maxLength));
             }
         }
     }
-
     private static void removeEmptyFile(Path file, boolean hasData) {
         if (!hasData) {
             try {
                 Files.deleteIfExists(file);
-            } catch (IOException e) {
+            } catch (IOException exit) {
                 System.err.println("Error deleting empty file: " + file);
-                e.printStackTrace();
+                exit.printStackTrace();
             }
         }
     }
